@@ -3,7 +3,7 @@
 # Copyright (C) 2019  Mustafa YILDIZ <mydiz@hotmail.com>
 #
 # This file may be distributed under the terms of the GNU GPLv3 license.
-from . import filament_switch_sensor
+from . import pellet_switch_sensor
 
 ADC_REPORT_TIME = 0.500
 ADC_SAMPLE_TIME = 0.03
@@ -73,7 +73,7 @@ class HallFilamentWidthSensor:
         self.gcode.register_command('DISABLE_FILAMENT_WIDTH_LOG',
                                     self.cmd_log_disable)
 
-        self.runout_helper = filament_switch_sensor.RunoutHelper(config)
+        self.runout_helper = pellet_switch_sensor.RunoutHelper(config)
     # Initialization
     def handle_ready(self):
         # Load printer objects

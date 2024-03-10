@@ -4,7 +4,7 @@
 #
 # This file may be distributed under the terms of the GNU GPLv3 license.
 import logging
-from . import filament_switch_sensor
+from . import pellet_switch_sensor
 
 CHECK_RUNOUT_TIMEOUT = .250
 
@@ -21,7 +21,7 @@ class EncoderSensor:
         buttons.register_buttons([switch_pin], self.encoder_event)
         # Get printer objects
         self.reactor = self.printer.get_reactor()
-        self.runout_helper = filament_switch_sensor.RunoutHelper(config)
+        self.runout_helper = pellet_switch_sensor.RunoutHelper(config)
         self.get_status = self.runout_helper.get_status
         self.extruder = None
         self.estimated_print_time = None
